@@ -87,17 +87,22 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-4 text-gray-700">Input Data</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">Nama Santri</label>
+                <label className="block text-sm font-medium text-gray-600 mb-1">Nama File</label>
                 <div className="relative">
-                  <User className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+                <User className="absolute left-3 top-3 w-4 h-4 text-gray-500" />
                   <input
                     type="text"
                     required
                     placeholder="Contoh: Ahmad Fulan"
-                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg 
+                              text-gray-900 placeholder-gray-400
+                              focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
+                  <p className="text-[10px] text-gray-400 mt-1">
+                            Cukup tulis angka saja, Tulisan "QR" sudah otomatis terisi oleh sistem.
+                        </p>
                 </div>
               </div>
 
@@ -106,13 +111,16 @@ export default function Home() {
                 <div className="relative">
                   <Link className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                   <input
-                    type="url"
-                    required
-                    placeholder="https://drive.google.com/..."
-                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    value={formData.url}
-                    onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-                  />
+  type="url"
+  required
+  placeholder="https://drive.google.com/..."
+  className="w-full pl-10 pr-4 py-2 border rounded-lg 
+             text-gray-900 placeholder-gray-400
+             focus:ring-2 focus:ring-blue-500 focus:outline-none"
+  value={formData.url}
+  onChange={(e) => setFormData({ ...formData, url: e.target.value })}
+/>
+
                 </div>
               </div>
 
